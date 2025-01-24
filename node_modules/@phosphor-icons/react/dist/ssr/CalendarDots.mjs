@@ -1,0 +1,20 @@
+var f = Object.defineProperty, i = Object.defineProperties;
+var p = Object.getOwnPropertyDescriptors;
+var o = Object.getOwnPropertySymbols;
+var d = Object.prototype.hasOwnProperty, l = Object.prototype.propertyIsEnumerable;
+var t = (r, e, a) => e in r ? f(r, e, { enumerable: !0, configurable: !0, writable: !0, value: a }) : r[e] = a, m = (r, e) => {
+  for (var a in e || (e = {}))
+    d.call(e, a) && t(r, a, e[a]);
+  if (o)
+    for (var a of o(e))
+      l.call(e, a) && t(r, a, e[a]);
+  return r;
+}, s = (r, e) => i(r, p(e));
+import n, { forwardRef as c } from "react";
+import R from "../lib/SSRBase.mjs";
+import w from "../defs/CalendarDots.mjs";
+const C = c((r, e) => /* @__PURE__ */ n.createElement(R, s(m({ ref: e }, r), { weights: w })));
+C.displayName = "CalendarDots";
+export {
+  C as CalendarDots
+};

@@ -1,0 +1,20 @@
+var w = Object.defineProperty, f = Object.defineProperties;
+var n = Object.getOwnPropertyDescriptors;
+var t = Object.getOwnPropertySymbols;
+var p = Object.prototype.hasOwnProperty, s = Object.prototype.propertyIsEnumerable;
+var m = (r, o, e) => o in r ? w(r, o, { enumerable: !0, configurable: !0, writable: !0, value: e }) : r[o] = e, a = (r, o) => {
+  for (var e in o || (o = {}))
+    p.call(o, e) && m(r, e, o[e]);
+  if (t)
+    for (var e of t(o))
+      s.call(o, e) && m(r, e, o[e]);
+  return r;
+}, i = (r, o) => f(r, n(o));
+import c, { forwardRef as l } from "react";
+import d from "../lib/IconBase.mjs";
+import A from "../defs/FileArrowDown.mjs";
+const D = l((r, o) => /* @__PURE__ */ c.createElement(d, i(a({ ref: o }, r), { weights: A })));
+D.displayName = "FileArrowDown";
+export {
+  D as FileArrowDown
+};

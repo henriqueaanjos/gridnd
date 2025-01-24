@@ -1,0 +1,20 @@
+var c = Object.defineProperty, i = Object.defineProperties;
+var p = Object.getOwnPropertyDescriptors;
+var t = Object.getOwnPropertySymbols;
+var s = Object.prototype.hasOwnProperty, w = Object.prototype.propertyIsEnumerable;
+var m = (e, r, o) => r in e ? c(e, r, { enumerable: !0, configurable: !0, writable: !0, value: o }) : e[r] = o, a = (e, r) => {
+  for (var o in r || (r = {}))
+    s.call(r, o) && m(e, o, r[o]);
+  if (t)
+    for (var o of t(r))
+      w.call(r, o) && m(e, o, r[o]);
+  return e;
+}, f = (e, r) => i(e, p(r));
+import A, { forwardRef as n } from "react";
+import d from "../lib/IconBase.mjs";
+import l from "../defs/ArrowArcLeft.mjs";
+const I = n((e, r) => /* @__PURE__ */ A.createElement(d, f(a({ ref: r }, e), { weights: l })));
+I.displayName = "ArrowArcLeft";
+export {
+  I as ArrowArcLeft
+};

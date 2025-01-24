@@ -1,0 +1,20 @@
+var i = Object.defineProperty, p = Object.defineProperties;
+var s = Object.getOwnPropertyDescriptors;
+var o = Object.getOwnPropertySymbols;
+var c = Object.prototype.hasOwnProperty, R = Object.prototype.propertyIsEnumerable;
+var t = (e, r, a) => r in e ? i(e, r, { enumerable: !0, configurable: !0, writable: !0, value: a }) : e[r] = a, m = (e, r) => {
+  for (var a in r || (r = {}))
+    c.call(r, a) && t(e, a, r[a]);
+  if (o)
+    for (var a of o(r))
+      R.call(r, a) && t(e, a, r[a]);
+  return e;
+}, f = (e, r) => p(e, s(r));
+import d, { forwardRef as l } from "react";
+import n from "../lib/SSRBase.mjs";
+import w from "../defs/Jar.mjs";
+const J = l((e, r) => /* @__PURE__ */ d.createElement(n, f(m({ ref: r }, e), { weights: w })));
+J.displayName = "Jar";
+export {
+  J as Jar
+};

@@ -1,0 +1,20 @@
+var f = Object.defineProperty, p = Object.defineProperties;
+var s = Object.getOwnPropertyDescriptors;
+var o = Object.getOwnPropertySymbols;
+var c = Object.prototype.hasOwnProperty, n = Object.prototype.propertyIsEnumerable;
+var a = (r, e, t) => e in r ? f(r, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : r[e] = t, m = (r, e) => {
+  for (var t in e || (e = {}))
+    c.call(e, t) && a(r, t, e[t]);
+  if (o)
+    for (var t of o(e))
+      n.call(e, t) && a(r, t, e[t]);
+  return r;
+}, i = (r, e) => p(r, s(e));
+import b, { forwardRef as d } from "react";
+import l from "../lib/IconBase.mjs";
+import w from "../defs/Vibrate.mjs";
+const I = d((r, e) => /* @__PURE__ */ b.createElement(l, i(m({ ref: e }, r), { weights: w })));
+I.displayName = "Vibrate";
+export {
+  I as Vibrate
+};

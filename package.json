@@ -1,0 +1,70 @@
+{
+  "name": "gridnd",
+  "version": "1.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "dist/index.css"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    },
+    "./style.css": "./dist/index.css"
+  },
+  "description": "A drag-and-drop library for customizable grid layouts, supporting hidden cards and dynamic card resizing.",
+  "keywords": [
+    "drag-and-drop",
+    "grid-layout",
+    "react",
+    "typescript",
+    "draggable",
+    "resizing"
+  ],
+  "homepage": "https://github.com/henriqueaanjos/gridnd#readme",
+  "bugs": {
+    "url": "https://github.com/henriqueaanjos/gridnd/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/henriqueaanjos/gridnd.git"
+  },
+  "license": "MIT",
+  "author": "Henrique Anjos <henrique.aa01@gmail.com>",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "npx postcss src/styles/globals.css -o dist/index.css",
+    "build": "npm run build:css && tsup",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@phosphor-icons/react": "^2.1.7",
+    "@radix-ui/react-dropdown-menu": "^2.1.4",
+    "@shadcn/ui": "^0.0.4",
+    "react": ">=18.0.0 <20.0.0",
+    "react-dom": ">=18.0.0 <20.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.5.1",
+    "postcss-cli": "^11.0.0",
+    "tailwindcss": "^3.4.17",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@radix-ui/colors": "^3.0.0",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.473.0",
+    "motion": "^12.0.3",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
+  }
+}
