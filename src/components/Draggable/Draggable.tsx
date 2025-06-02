@@ -22,10 +22,11 @@ interface DraggableProps {
     onDragMove: (idOrigin: string, idDestiny: string) => void,
     onHidden?: () => void,
     isSizingDynamic?: boolean,
-    availableSizes?: Size[]
+    availableSizes?: Size[],
+    language?: 'pt-BR' | 'en-US',
 }
 
-export function Draggable({ id, size, children, onDragMove, onHidden, isSizingDynamic, availableSizes = ['sm', 'md', 'lg', 'xl'], }: DraggableProps) {
+export function Draggable({ id, size, children, onDragMove, onHidden, isSizingDynamic, availableSizes = ['sm', 'md', 'lg', 'xl'], language = 'en-US' }: DraggableProps) {
     const [isDragging, setIsDragging] = useState(false);
     const [isHover, setIsHover] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -131,7 +132,8 @@ export function Draggable({ id, size, children, onDragMove, onHidden, isSizingDy
                                         className="flex flex-row gap-2 items-center justify-start"
                                         onClick={onHidden}
                                     >
-                                        <EyeClosed size="1rem" /> Hidden Card
+                                        <EyeClosed size="1rem" /> 
+                                        {language === 'pt-BR'? 'Ocultar Card' : 'Hidden Card'}
                                     </DropdownMenuItem>
                                     <DropdownMenuSeparator />
                                 </>
@@ -146,25 +148,25 @@ export function Draggable({ id, size, children, onDragMove, onHidden, isSizingDy
                                             value="sm"
                                             disabled={!availableOptionSizes.includes('sm')}
                                         >
-                                            Small(sm)
+                                            {language === 'pt-BR'? 'Pequeno(sm)' : 'Small(sm)'}
                                         </DropdownMenuRadioItem>
                                         <DropdownMenuRadioItem
                                             value="md"
                                             disabled={!availableOptionSizes.includes('sm')}
                                         >
-                                            Medium(md)
+                                            {language === 'pt-BR'? 'Médio(md)' : 'Medium(md)'}
                                         </DropdownMenuRadioItem>
                                         <DropdownMenuRadioItem
                                             value="lg"
                                             disabled={!availableOptionSizes.includes('sm')}
                                         >
-                                            Larger(lg)
+                                            {language === 'pt-BR'? 'Grande(lg)' : 'Larger(lg)'}
                                         </DropdownMenuRadioItem>
                                         <DropdownMenuRadioItem
                                             value="xl"
                                             disabled={!availableOptionSizes.includes('sm')}
                                         >
-                                            Extra Larger(xl)
+                                            {language === 'pt-BR'? 'Extra Grande(xl)' : 'Extra Larger(xl)'}
                                         </DropdownMenuRadioItem>
                                     </DropdownMenuRadioGroup>
                                 </>
